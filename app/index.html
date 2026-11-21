@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VICE COVER</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app" id="app">
+  <aside class="sidebar">
+    <header class="brand"><h1>VICE<span>COVER</span></h1><p>turn your photo into cover art</p></header>
+    <section class="panel">
+      <h2>Photo</h2>
+      <div class="drop" id="dropZone">
+        <input type="file" id="photoInput" accept="image/*" hidden>
+        <span class="drop-hint">drop a photo or click to browse</span>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </section>
+    <section class="panel">
+      <h2>Layout</h2>
+      <div class="chips" id="layoutChips"></div>
+    </section>
+    <section class="panel">
+      <h2>Colour grade</h2>
+      <div class="chips" id="gradeChips"></div>
+    </section>
+    <section class="panel">
+      <h2>Caption</h2>
+      <input type="text" id="caption" maxlength="60" placeholder="your caption here">
+    </section>
+    <section class="panel">
+      <h2>Export</h2>
+      <select id="size">
+        <option value="1080x1080">1080 x 1080 (square)</option>
+        <option value="1080x1350" selected>1080 x 1350 (portrait)</option>
+        <option value="1920x1080">1920 x 1080 (wide)</option>
+      </select>
+      <button id="exportBtn" class="cta">export png</button>
+    </section>
+  </aside>
+  <section class="stage"><canvas id="coverCanvas" width="1080" height="1350"></canvas></section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
